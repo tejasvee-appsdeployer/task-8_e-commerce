@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const NavBar = () => {
+	return (
+		<Navbar bg="dark" variant="dark">
+			<Container>
+				<Navbar.Brand href="#home">Navbar</Navbar.Brand>
+				<Nav className="me-auto">
+					<Nav.Item>
+						<Link className="nav-link" to="/about">
+							About
+						</Link>
+					</Nav.Item>
+					<Nav.Item>
+						<Link className="nav-link" to="/home">
+							Home
+						</Link>
+					</Nav.Item>
+				</Nav>
+			</Container>
+		</Navbar>
+	);
+};
+
+const Layout = () => {
+	return (
+		<div>
+			<NavBar />
+			<Outlet />
+		</div>
+	);
+};
+
+const Home = () => {
+	return <div>Home Page</div>;
+};
+
+const About = () => {
+	return <div>About Page</div>;
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route path="/about" element={<About />} />
+					<Route path="/home" element={<Home />} />
+				</Route>
+			</Routes>
+		</div>
+	);
 }
 
 export default App;
