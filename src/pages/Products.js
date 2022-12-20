@@ -4,8 +4,8 @@ import { Card, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 function Products() {
-	const [data, setData] = useState([]);
 	const navigate = useNavigate();
+	const [data, setData] = useState([]);
 	useEffect(() => {
 		axios
 			.get("https://dummyjson.com/products/")
