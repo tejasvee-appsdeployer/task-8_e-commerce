@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { addToCart } from "../features/cart";
 import { useDispatch } from "react-redux";
+import { addToWishList } from "../features/wishlist";
 
 function Products() {
 	const navigate = useNavigate();
@@ -38,7 +39,14 @@ function Products() {
 									>
 										Add to cart
 									</Button>{" "}
-									<Button className="btn-success">Add to wishlist</Button>
+									<Button
+										className="btn-success"
+										onClick={() => {
+											dispatch(addToWishList(JSON.parse(JSON.stringify(prod))));
+										}}
+									>
+										Add to wishlist
+									</Button>
 								</ButtonGroup>
 							</Card.Body>
 						</Card>

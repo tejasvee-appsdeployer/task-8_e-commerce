@@ -1,5 +1,6 @@
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import WishList from "./WishList";
 
 export const NavBar = () => {
 	return (
@@ -24,7 +25,7 @@ export const NavBar = () => {
 					</Nav.Item>
 				</Nav>
 			</Container>
-			<Button>Wishlist</Button>
+			<WishList />
 		</Navbar>
 	);
 };

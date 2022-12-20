@@ -9,12 +9,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import productsReducer from "./features/products";
 import cartReducer from "./features/cart";
+import wishlistReducer from "./features/wishlist";
 import Cart from "./pages/Cart";
 
 const store = configureStore({
 	reducer: {
 		products: productsReducer,
 		cart: cartReducer,
+		wishlist: wishlistReducer,
 	},
 });
 
