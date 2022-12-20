@@ -6,7 +6,6 @@ const ProductInfo = () => {
 	const { id } = useParams();
 	const data = useSelector((state) => state.products.value[id - 1]);
 	const { images } = data;
-	console.log(data);
 	return (
 		<Container className="my-5">
 			<Container className="row">

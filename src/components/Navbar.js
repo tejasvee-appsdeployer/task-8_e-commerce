@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const NavBar = () => {
@@ -17,8 +17,14 @@ export const NavBar = () => {
 							About
 						</Link>
 					</Nav.Item>
+					<Nav.Item>
+						<Link className="nav-link" to="/cart">
+							Cart
+						</Link>
+					</Nav.Item>
 				</Nav>
 			</Container>
+			<Button>Wishlist</Button>
 		</Navbar>
 	);
 };

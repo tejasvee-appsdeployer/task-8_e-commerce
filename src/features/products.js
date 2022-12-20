@@ -582,14 +582,7 @@ export const productsSlice = createSlice({
 	initialState: {
 		value: data,
 	},
-	reducers: {
-		addProduct: (state, action) => {
-			// state.value.push(action.payload)
-		},
-		removeProduct: (state, action) => {
-			// state.value.remove(action.payload)
-		},
-	},
+	reducers: {},
 });
 
 export default productsSlice.reducer;

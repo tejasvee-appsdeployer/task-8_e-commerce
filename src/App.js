@@ -8,10 +8,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import productsReducer from "./features/products";
+import cartReducer from "./features/cart";
+import Cart from "./pages/Cart";
 
 const store = configureStore({
 	reducer: {
 		products: productsReducer,
+		cart: cartReducer,
 	},
 });
 
@@ -23,6 +26,7 @@ function App() {
 					<Route path="/" element={<Layout />}>
 						<Route path="/" element={<Products />} />
 						<Route path="/about" element={<About />} />
+						<Route path="/cart" element={<Cart />} />
 						<Route path="/:id" element={<ProductInfo />} />
 						<Route path="*" element={<Products />} />
 					</Route>
