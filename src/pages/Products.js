@@ -1,21 +1,16 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card, Container } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function Products() {
 	const navigate = useNavigate();
-	const [data, setData] = useState([]);
-	useEffect(() => {
-		axios
-			.get("https://dummyjson.com/products/")
-			.then((response) => setData(response.data.products));
-	}, []);
+	const productsList = useSelector((state) => state.products.value);
 	return (
 		<Container>
 			<h1>Products</h1>
 			<Container className="row gap-3">
-				{data.map((prod, index) => {
+				{productsList.map((prod, index) => {
 					return (
 						<Card
 							style={{ width: "18rem" }}
