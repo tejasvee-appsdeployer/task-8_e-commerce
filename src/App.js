@@ -4,7 +4,6 @@ import Products from "./pages/Products";
 import About from "./pages/About";
 import ProductInfo from "./pages/ProductInfo";
 import { Layout } from "./components/Layout";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
