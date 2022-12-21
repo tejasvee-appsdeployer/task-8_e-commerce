@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,17 +28,22 @@ function WishList() {
 						{data.map((item) => {
 							return (
 								<li key={item.id} className="">
-									{item.title}
-									<Button
-										variant="danger"
-										onClick={() => {
-											dispatcher(
-												removeFromWishList(JSON.parse(JSON.stringify(item)))
-											);
-										}}
-									>
-										Remove
-									</Button>
+									<Col>
+										{item.title} - ${item.price}
+									</Col>
+
+									<Col>
+										<Button
+											variant="danger"
+											onClick={() => {
+												dispatcher(
+													removeFromWishList(JSON.parse(JSON.stringify(item)))
+												);
+											}}
+										>
+											Remove
+										</Button>
+									</Col>
 								</li>
 							);
 						})}
